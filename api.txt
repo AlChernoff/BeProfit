@@ -1,0 +1,40 @@
+API consists of several endpoints:
+
+1. fetch.php - fetches data from external api and inserts it to db. No mandatory params
+
+2. create.php - creates and order. All fields must be provided
+Example of data :
+  {
+            "order_ID": "3364187177129",
+            "shop_ID": "50026315945",
+            "closed_at": null,
+            "created_at": "2021-02-16 16:18:45",
+            "updated_at": "2021-02-16 16:18:46",
+            "total_price": "458",
+            "subtotal_price": "458",
+            "total_weight": "0",
+            "total_tax": "0",
+            "currency": "ILS",
+            "financial_status": "paid",
+            "total_discounts": "0",
+            "name": "#1289",
+            "fulfillment_status": "unfulfilled",
+            "country": "IQ",
+            "province": "",
+            "total_items": "2",
+            "total_order_shipping_cost": "44",
+            "total_order_handling_cost": "2.8"
+        }
+
+3. update.php - endpoint to update order. order_ID is mandatory field, also fields:  total_order_shipping_cost, total_order_handling_cost are immutable
+
+4. delete.php - endpoint to delete an existing order. order_ID is mandatory field
+
+5. read.php - endpoint to get an existing order. order_ID is mandatory field
+
+6. summary.php - endpoint to get statistics. If not provided any flag - statistics between dates will be returned.
+Params: start_date and end_date.
+Options:
+1. daily - will return statistics grouped by day
+1. weekly - will return statistics grouped by week
+1. monthly - will return statistics grouped by month
