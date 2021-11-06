@@ -1,0 +1,25 @@
+-- beProfit.orders definition
+
+CREATE TABLE `orders` (
+  `order_ID` varchar(200) NOT NULL,
+  `shop_ID` varchar(200) NOT NULL,
+  `closed_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `total_price` varchar(10) NOT NULL,
+  `subtotal_price` varchar(10) NOT NULL,
+  `total_weight` varchar(5) NOT NULL,
+  `total_tax` varchar(5) NOT NULL,
+  `financial_status` varchar(10) NOT NULL,
+  `total_discounts` varchar(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `fulfillment_status` varchar(100) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  `province` varchar(30) NOT NULL,
+  `total_items` varchar(20) NOT NULL,
+  `total_order_shipping_cost` varchar(10) NOT NULL,
+  `total_order_handling_cost` varchar(10) NOT NULL,
+  `currency` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`order_ID`),
+  KEY `shop_ID` (`shop_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
